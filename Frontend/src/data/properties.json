@@ -1,38 +1,51 @@
 [
     {
       "Id": 1,
+      "SellRent":1,
       "Name": "Birla House",
       "Type": "House",
       "Price": 12000
+
     },
     {
       "Id": 2,
+      "SellRent":1,
       "Name": "Whinston House",
       "Type": "House",
-      "Price": 20000
+      "Price": 20000,
+      "Image":"house-2.jpg"
     },
     {
       "Id": 3,
+      "SellRent":2,
       "Name": "Kingston Appartment",
       "Type": "House",
-      "Price": 14000
+      "Price": 14000,
+      "Image":"house-1.jpg"
     },
     {
       "Id": 4,
+      "SellRent":1,
       "Name": "King's House",
       "Type": "House",
-      "Price": 18000
+      "Price": 18000,
+      "Image":"house-3.jpg"
     },
     {
       "Id": 5,
+      "SellRent":1,
       "Name": "Lands House",
-      "Type": "House",
-      "Price": 25000
+      "Type": "Flat",
+      "Price": 25000,
+      "Image":"flat-1.jpg"
     },
     {
       "Id": 6,
+      "SellRent":2,
       "Name": "Esher House",
-      "Type": "House",
-      "Price": 28000
+      "Type": "Flat",
+      "Price": 28000,
+      "Image":"flat-2.jpg"
+
     }
   ]

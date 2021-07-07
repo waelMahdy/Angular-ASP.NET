@@ -10,14 +10,20 @@ import { Observable } from 'rxjs';
 export class HousingService {
   constructor(private http: HttpClient) {}
 
-  getAllProperties(): Observable<IProperty[]> {
+  getAllProperties(sellRent: number): Observable<IProperty[]> {
     return this.http.get('data/properties.json').pipe(
       map((data) => {
         const propsArray: Array<IProperty> = [];
         const dotjson = JSON.stringify(data);
         const not = JSON.parse(dotjson);
+
         for (const id in not) {
-          propsArray.push(not[id]);
+          if (not[id].SellRent === sellRent) {
+            propsArray.push(not[id]);
+          }
+          if (sellRent === 3) {
+            propsArray.push(not[id]);
+          }
         }
         return propsArray;
       })
