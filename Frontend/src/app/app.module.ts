@@ -12,6 +12,9 @@ import { PropertyDetailComponent } from './property/property-detail/property-det
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserService } from './services/user.service';
+import { HousingService } from './services/housing.service';
+import { AlertifyService } from './services/alertify.service';
 const appRoutes: Routes = [
   { path: '', component: PropertyListComponent },
   { path: 'add-property', component: AddPropertyComponent },
@@ -42,7 +45,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [AlertifyService, HousingService, UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

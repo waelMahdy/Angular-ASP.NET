@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mt-3">
   <div class="col-6 m-auto">
     <div class="card shadow-lg m-auto">
       <div class="card-header"><h2>Register</h2></div>
@@ -9,10 +9,10 @@
             <input
               type="text"
               class="form-control"
-              formControlName="userName"
+              formControlName="UserName"
             />
             <span
-              *ngIf="!UserName.valid && UserName.touched"
+              *ngIf="!UserName.valid && (UserName.touched || userSubmitted)"
               class="text-danger"
               >Please provide a name</span
             >
@@ -20,7 +20,10 @@
           <div class="form-group col-12">
             <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" formControlName="email" />
-            <span *ngIf="!email.valid && email.touched" class="text-danger">
+            <span
+              *ngIf="!email.valid && (email.touched || userSubmitted)"
+              class="text-danger"
+            >
               <span *ngIf="email.hasError('required')"
                 >Your Email is required
               </span>
@@ -34,10 +37,10 @@
             <input
               type="password"
               class="form-control"
-              formControlName="password"
+              formControlName="PassWord"
             />
             <span
-              *ngIf="!PassWord.valid && PassWord.touched"
+              *ngIf="!PassWord.valid && (PassWord.touched || userSubmitted)"
               class="text-danger"
             >
               <span *ngIf="PassWord.errors['required']"
@@ -53,14 +56,17 @@
             <input
               type="password"
               class="form-control"
-              formControlName="confirmPassword"
+              formControlName="confirmPassWord"
             />
             <span
-              *ngIf="!confirmPassWord.valid && confirmPassWord.touched"
+              *ngIf="
+                !confirmPassWord.valid &&
+                (confirmPassWord.touched || userSubmitted)
+              "
               class="text-danger"
             >
               <span *ngIf="confirmPassWord.errors['required']"
-                >confirm your password id required
+                >confirmation of your password is required
               </span>
             </span>
             <span
@@ -73,10 +79,12 @@
             >
           </div>
           <div class="form-group col-12">
-            <label for="name" class="form-label">Phone number</label>
-            <input type="text" class="form-control" formControlName="mobile" />
+            <label for="mobile" class="form-label">Phone number</label>
+            <input type="tel" class="form-control" formControlName="Mobile" />
             <span
-              *ngIf="Mobile.hasError('required') && Mobile.touched"
+              *ngIf="
+                Mobile.hasError('required') && (Mobile.touched || userSubmitted)
+              "
               class="text-danger"
               >Your phone number is required
             </span>
@@ -89,9 +97,9 @@
             />
             <input type="reset" class="btn btn-success m-2" value="Cancel" />
           </div>
-          Form values:{{ registerationForm.value | json }} <br />
+          <!-- Form values:{{ registerationForm.value | json }} <br />
           Form status:
-          {{ registerationForm.valid }}
+          {{ registerationForm.valid }} -->
         </form>
       </div>
     </div>
